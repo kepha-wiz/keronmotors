@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Keron Motors - Premium Tuk Tuk Models in Uganda</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="tuk tuk models, cargo tricycle, EcoCargo, HeavyDuty, UrbanMover, AgriHauler, Uganda" name="keywords">
+    <meta content="Explore Keron Motors' premium Tuk Tuk cargo tricycle models. Durable, efficient, and designed for Ugandan terrain. EcoCargo, HeavyDuty, UrbanMover, and AgriHauler." name="description">
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .vehicle-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .vehicle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .vehicle-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .vehicle-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .vehicle-card:hover .vehicle-image-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .badge-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            z-index: 10;
+        }
+
+        .vehicle-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vehicle-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0d6efd;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .vehicle-description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .features-list {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .features-list h6 {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 13px;
+        }
+
+        .features-list li {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 6px;
+            padding-left: 0;
+        }
+
+        .features-list li i {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .vehicle-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .btn-inquire {
+            flex: 1;
+            background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-inquire:hover {
+            background: linear-gradient(135deg, #0b5ed7 0%, #0a58ca 100%);
+            transform: translateX(3px);
+            color: white;
+        }
+
+        .btn-demo {
+            flex: 1;
+            border: 2px solid #0d6efd;
+            color: #0d6efd;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-demo:hover {
+            background: #0d6efd;
+            color: white;
+            transform: translateX(-3px);
+        }
+
+        .comparison-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .table-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table thead {
+            background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+            color: white;
+        }
+
+        .table th {
+            font-weight: 700;
+            border: none;
+            padding: 18px 12px;
+        }
+
+        .table td {
+            vertical-align: middle;
+            padding: 15px 12px;
+            border-color: #dee2e6;
+        }
+
+        .table tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        .table tbody tr:hover {
+            background-color: #e7f1ff;
+        }
+
+        .table tbody tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .table strong {
+            color: #0d6efd;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        }
+
+        .why-choose-item {
+            padding: 20px;
+            border-left: 4px solid #0d6efd;
+            background: white;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .why-choose-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15);
+        }
+
+        .why-choose-item h5 {
+            color: #0d6efd;
+            font-weight: 700;
+        }
+
+        .why-choose-item p {
+            color: #666;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section-header h6 {
+            color: #0d6efd;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 13px;
+        }
+
+        .section-header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #333;
+            margin: 15px 0;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .page-header-custom {
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.9) 0%, rgba(11, 94, 215, 0.9) 100%), url(img/carousel-bg-1.jpg);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        /* add: darker header/background overlay and image tint for vehicle cards */
+.page-header-custom::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35); /* adjust opacity to taste (0.2 - 0.5) */
+    z-index: 1;
+    pointer-events: none;
+}
+.page-header-custom .page-header-inner,
+.page-header-custom .page-header-inner .container,
+.page-header-custom .page-header-inner .container .text-center {
+    position: relative;
+    z-index: 2; /* ensure text sits above overlay */
+}
+
+/* subtle dark tint on vehicle images for better contrast */
+.vehicle-image-wrapper {
+    position: relative; /* already set, re-ensure for ::after */
+}
+.vehicle-image-wrapper::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.12); /* subtle tint; increase to 0.18-0.2 for stronger effect */
+    z-index: 2;
+    pointer-events: none;
+}
+/* ensure badges remain visible above image tint */
+.badge-container { z-index: 3; }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>Jinja | Masaka | Mbarara</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-3">
+                    <small class="far fa-clock text-primary me-2"></small>
+                    <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>+256 783 170 177</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><i class="fa fa-car me-3"></i>Keron Motors</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="vehicles.html" class="nav-item nav-link active">Our Tuk Tuks</a>
+                <a href="service.html" class="nav-item nav-link">Services</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 p-0 page-header-custom">
+        <div class="container-fluid page-header-inner py-5">
+            <div class="container text-center">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Our Premium Tuk Tuks</h1>
+                <p class="text-white fs-5 animated slideInUp">Discover the Perfect Vehicle for Your Business</p>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center text-uppercase">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Our Tuk Tuks</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Vehicles Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="section-header">
+                <h6 class="text-uppercase">// Our Premium Fleet //</h6>
+                <h1>Explore Our Tuk Tuk Cargo Tricycles</h1>
+                <p>Keron Motors offers a range of durable and efficient cargo Tuk Tuks designed for different business needs. All models feature 300cc water-cooled engines for reliable performance in Uganda's demanding conditions.</p>
+            </div>
+            <div class="row g-5">
+                <!-- EcoCargo Model -->
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="vehicle-card rounded">
+                        <div class="vehicle-image-wrapper">
+                            <div class="badge-container">
+                                <span class="badge bg-primary">300cc Water Cooling</span>
+                                <span class="badge bg-success">Fuel Efficient</span>
+                            </div>
+                            <img class="img-fluid" src="img/1.jpg" alt="Keron Motors EcoCargo">
+                        </div>
+                        <div class="vehicle-content">
+                            <h4 class="vehicle-title">EcoCargo</h4>
+                            <p class="vehicle-description">The EcoCargo is our most economical model, perfect for small businesses and urban deliveries. Built with lightweight construction for maximum fuel efficiency without compromising durability.</p>
+                            <div class="features-list">
+                                <h6>Key Features</h6>
+                                <ul class="list-unstyled small">
+                                    <li><i class="fa fa-check me-2"></i>Compact cargo bed (4ft x 2.5ft)</li>
+                                    <li><i class="fa fa-check me-2"></i>Excellent fuel economy</li>
+                                    <li><i class="fa fa-check me-2"></i>Easy maneuverability</li>
+                                    <li><i class="fa fa-check me-2"></i>Low maintenance costs</li>
+                                </ul>
+                            </div>
+                            <div class="vehicle-buttons">
+                                <a href="contact.html" class="btn btn-inquire btn-sm">Inquire Now</a>
+                                <a href="contact.html" class="btn btn-demo btn-sm">Schedule Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HeavyDuty Model -->
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="vehicle-card rounded">
+                        <div class="vehicle-image-wrapper">
+                            <div class="badge-container">
+                                <span class="badge bg-primary">300cc Water Cooling</span>
+                                <span class="badge bg-danger">High Capacity</span>
+                            </div>
+                            <img class="img-fluid" src="img/2.png" alt="Keron Motors HeavyDuty">
+                        </div>
+                        <div class="vehicle-content">
+                            <h4 class="vehicle-title">HeavyDuty</h4>
+                            <p class="vehicle-description">The HeavyDuty is engineered for maximum payload capacity. Ideal for construction sites, large-scale commerce, and industrial transport. Reinforced frame and suspension handle the toughest loads.</p>
+                            <div class="features-list">
+                                <h6>Key Features</h6>
+                                <ul class="list-unstyled small">
+                                    <li><i class="fa fa-check me-2"></i>Large cargo bed (6ft x 3.5ft)</li>
+                                    <li><i class="fa fa-check me-2"></i>Reinforced suspension</li>
+                                    <li><i class="fa fa-check me-2"></i>Maximum payload: 800kg</li>
+                                    <li><i class="fa fa-check me-2"></i>Extended warranty</li>
+                                </ul>
+                            </div>
+                            <div class="vehicle-buttons">
+                                <a href="contact.html" class="btn btn-inquire btn-sm">Inquire Now</a>
+                                <a href="contact.html" class="btn btn-demo btn-sm">Schedule Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UrbanMover Model -->
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="vehicle-card rounded">
+                        <div class="vehicle-image-wrapper">
+                            <div class="badge-container">
+                                <span class="badge bg-primary">300cc Water Cooling</span>
+                                <span class="badge bg-info">Urban Optimized</span>
+                            </div>
+                            <img class="img-fluid" src="img/3.jpg" alt="Keron Motors UrbanMover">
+                        </div>
+                        <div class="vehicle-content">
+                            <h4 class="vehicle-title">UrbanMover</h4>
+                            <p class="vehicle-description">The UrbanMover is specifically designed for city delivery services and light commercial use. Features improved maneuverability, modern comfort features, and excellent visibility for safe urban navigation.</p>
+                            <div class="features-list">
+                                <h6>Key Features</h6>
+                                <ul class="list-unstyled small">
+                                    <li><i class="fa fa-check me-2"></i>Mid-size cargo bed (5ft x 3ft)</li>
+                                    <li><i class="fa fa-check me-2"></i>Improved cabin design</li>
+                                    <li><i class="fa fa-check me-2"></i>LED lighting package</li>
+                                    <li><i class="fa fa-check me-2"></i>Comfortable seating</li>
+                                </ul>
+                            </div>
+                            <div class="vehicle-buttons">
+                                <a href="contact.html" class="btn btn-inquire btn-sm">Inquire Now</a>
+                                <a href="contact.html" class="btn btn-demo btn-sm">Schedule Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AgriHauler Model -->
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="vehicle-card rounded">
+                        <div class="vehicle-image-wrapper">
+                            <div class="badge-container">
+                                <span class="badge bg-primary">300cc Water Cooling</span>
+                                <span class="badge bg-warning">Agriculture Ready</span>
+                            </div>
+                            <img class="img-fluid" src="img/4.jpg" alt="Keron Motors AgriHauler">
+                        </div>
+                        <div class="vehicle-content">
+                            <h4 class="vehicle-title">AgriHauler</h4>
+                            <p class="vehicle-description">The AgriHauler is purpose-built for agricultural and rural transport. Enhanced traction, durable materials, and specialized cargo handling make it perfect for farm produce and rural commerce.</p>
+                            <div class="features-list">
+                                <h6>Key Features</h6>
+                                <ul class="list-unstyled small">
+                                    <li><i class="fa fa-check me-2"></i>Large open cargo bed</li>
+                                    <li><i class="fa fa-check me-2"></i>Off-road capable suspension</li>
+                                    <li><i class="fa fa-check me-2"></i>Removable side panels</li>
+                                    <li><i class="fa fa-check me-2"></i>All-terrain tires</li>
+                                </ul>
+                            </div>
+                            <div class="vehicle-buttons">
+                                <a href="contact.html" class="btn btn-inquire btn-sm">Inquire Now</a>
+                                <a href="contact.html" class="btn btn-demo btn-sm">Schedule Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vehicles End -->
+
+    <!-- Specifications Comparison Start -->
+    <div class="container-xxl py-5 comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h6 class="text-uppercase">// Quick Comparison //</h6>
+                <h1>Model Specifications at a Glance</h1>
+            </div>
+            <div class="table-wrapper wow fadeInUp" data-wow-delay="0.3s">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th><i class="fa fa-cogs me-2"></i>Feature</th>
+                            <th>EcoCargo</th>
+                            <th>HeavyDuty</th>
+                            <th>UrbanMover</th>
+                            <th>AgriHauler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Engine Type</strong></td>
+                            <td>300cc Water Cooled</td>
+                            <td>300cc Water Cooled</td>
+                            <td>300cc Water Cooled</td>
+                            <td>300cc Water Cooled</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cargo Bed Dimensions</strong></td>
+                            <td>4ft x 2.5ft</td>
+                            <td>6ft x 3.5ft</td>
+                            <td>5ft x 3ft</td>
+                            <td>6ft x 4ft</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Maximum Payload</strong></td>
+                            <td>500kg</td>
+                            <td>800kg</td>
+                            <td>650kg</td>
+                            <td>750kg</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fuel Tank Capacity</strong></td>
+                            <td>15L</td>
+                            <td>18L</td>
+                            <td>16L</td>
+                            <td>18L</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Best Use Case</strong></td>
+                            <td>Urban Delivery</td>
+                            <td>Industrial/Heavy</td>
+                            <td>City Transport</td>
+                            <td>Agricultural/Rural</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fuel Efficiency</strong></td>
+                            <td><span class="badge bg-success">Excellent</span></td>
+                            <td><span class="badge bg-info">Good</span></td>
+                            <td><span class="badge bg-success">Very Good</span></td>
+                            <td><span class="badge bg-info">Good</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Specifications Comparison End -->
+
+    <!-- CTA Start -->
+    <div class="container-xxl py-5 cta-section">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                    <h6 class="text-primary text-uppercase mb-2">// Find Your Perfect Match //</h6>
+                    <h1 class="mb-4 display-5">Choose the Right Tuk Tuk for Your Business</h1>
+                    <p class="mb-4 fs-5">Unsure which model suits your business needs? Our expert sales team can guide you through each model's strengths and help you make the best choice based on your requirements, budget, and operating conditions.</p>
+                    <div class="d-flex gap-3 mb-4">
+                        <div>
+                            <i class="fa fa-check-circle text-primary fs-4 mb-2"></i>
+                            <p class="mb-0"><strong>Expert Consultation</strong></p>
+                        </div>
+                        <div>
+                            <i class="fa fa-money-bill text-primary fs-4 mb-2"></i>
+                            <p class="mb-0"><strong>Flexible Financing</strong></p>
+                        </div>
+                        <div>
+                            <i class="fa fa-headset text-primary fs-4 mb-2"></i>
+                            <p class="mb-0"><strong>After-sales Support</strong></p>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary py-3 px-5 btn-lg">Contact Sales Team<i class="fa fa-arrow-right ms-3"></i></a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-flex flex-column gap-4">
+                        <div class="why-choose-item wow fadeInRight" data-wow-delay="0.2s">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; flex-shrink: 0;">
+                                    <i class="fa fa-star fa-lg"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">Genuine Quality</h5>
+                                    <p>All vehicles are built to the highest standards with genuine components and rigorous quality testing.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="why-choose-item wow fadeInRight" data-wow-delay="0.3s">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; flex-shrink: 0;">
+                                    <i class="fa fa-shield-alt fa-lg"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">Comprehensive Warranty</h5>
+                                    <p>Full warranty coverage and ongoing technical support for all models ensures peace of mind.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="why-choose-item wow fadeInRight" data-wow-delay="0.4s">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; flex-shrink: 0;">
+                                    <i class="fa fa-credit-card fa-lg"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">Flexible Payment Plans</h5>
+                                    <p>Easy financing options and payment schemes tailored to your business needs and budget.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <!-- CTA End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Our Branches</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jinja | Masaka | Mbarara</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+256 783 170 177</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@keronmotors.ug</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/KeronMotorsUG" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://facebook.com/KeronMotorsUG" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://youtube.com/KeronMotorsUG" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://linkedin.com/company/keron-motors" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Opening Hours</h4>
+                    <h6 class="text-light">Monday - Friday:</h6>
+                    <p class="mb-4">8:00 AM - 5:00 PM</p>
+                    <h6 class="text-light">Saturday:</h6>
+                    <p class="mb-4">9:00 AM - 1:00 PM</p>
+                    <h6 class="text-light">Sunday:</h6>
+                    <p class="mb-0">Closed</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Our Services</h4>
+                    <a class="btn btn-link" href="service.html#tab-pane-1">Engine & Drivetrain Parts</a>
+                    <a class="btn btn-link" href="service.html#tab-pane-2">Brake & Suspension Parts</a>
+                    <a class="btn btn-link" href="service.html#tab-pane-3">Electrical & Lighting</a>
+                    <a class="btn btn-link" href="service.html#tab-pane-4">Maintenance & Accessories</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Newsletter</h4>
+                    <p>Stay updated with the latest news, offers, and Tuk Tuk tips from Keron Motors!</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Keron Motors</a>, All Rights Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="index.html">Home</a>
+                            <a href="#">Cookies</a>
+                            <a href="contact.html">Help</a>
+                            <a href="about.html">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/wa-branches.js"></script>
+    <!-- re-added delightchat widget -->
+    <script async src="https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js"></script>
+    <script>
+        var wa_btnSetting = {"btnColor":"#16BE45","ctaText":"WhatsApp Us","cornerRadius":40,"marginBottom":20,"marginLeft":20,"marginRight":20,"btnPosition":"right","whatsAppNumber":"256783170177","welcomeMessage":"Talk to us","zIndex":999999,"btnColorScheme":"light"};
+        window.onload = () => {
+            _waEmbed(wa_btnSetting);
+        };
+    </script>
+    <!-- Spinner Handler Script -->
+    <script>
+    window.addEventListener('load', function() {
+        const spinner = document.getElementById('spinner');
+        if (spinner) {
+            spinner.classList.remove('show');
+        }
+    });
+    </script>
+</body>
+
+</html>
