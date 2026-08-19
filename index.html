@@ -1,624 +1,554 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
-    <title>Keron Motors - Premium Tuk Tuks in Uganda</title>
+    <title>Keron Motors | Premium Cargo Tuk Tuks & Services in Uganda</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="tuk tuk, cargo tricycle, Uganda, Kampala, Jinja, Masaka, Mbarara, vehicle sales, maintenance" name="keywords">
     <meta content="Keron Motors offers reliable cargo Tuk Tuks, expert servicing, and genuine spare parts in Kampala, Jinja, Masaka, and Mbarara. Your trusted partner for efficient transport solutions." name="description">
 
-    <link href="favicon.ico" rel="icon">
+    <!-- Google Fonts: Plus Jakarta Sans for a modern, professional, non-generic look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet"> 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS (via CDN for immediate modern styling without generic Bootstrap template feel) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316', // Vibrant Orange for action/motors
+                            600: '#ea580c',
+                            900: '#0f172a', // Deep Slate for professionalism
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom subtle animations to replace generic "wow" animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Smooth image hover */
+        .img-zoom {
+            transition: transform 0.5s ease;
+        }
+        .group:hover .img-zoom {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
+<body class="font-sans text-slate-600 bg-slate-50 antialiased">
 
-<body>
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-    </div>
-
-    <div class="container-fluid bg-primary text-white py-2 d-none d-lg-flex">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex">
-                    <small class="me-3"><i class="fas fa-map-marker-alt me-2"></i>Jinja | Masaka | Mbarara</small>
-                    <small class="me-3"><i class="far fa-clock me-2"></i>Mon - Fri: 09:00 AM - 06:00 PM</small>
-                </div>
-                <div class="d-flex">
-                    <small class="me-3"><i class="fas fa-phone-alt me-2"></i>+256 783 170 177</small>
-                    <div class="d-flex">
-                        <a class="text-white me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="text-white me-2" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="text-white me-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                        <a class="text-white" href=""><i class="fab fa-instagram"></i></a>
-                    </div>
+    <!-- Top Bar -->
+    <div class="bg-brand-900 text-slate-300 text-sm py-2 hidden lg:block">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center"><i class="fas fa-map-marker-alt text-brand-500 mr-2"></i> Jinja | Masaka | Mbarara | Kampala</span>
+                <span class="flex items-center"><i class="far fa-clock text-brand-500 mr-2"></i> Mon - Fri: 8:00 AM - 5:00 PM</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="tel:+256783170177" class="hover:text-white transition flex items-center"><i class="fas fa-phone-alt mr-2"></i> +256 783 170 177</a>
+                <div class="flex space-x-3 ml-4 border-l border-slate-700 pl-4">
+                    <a href="#" class="hover:text-brand-500 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-brand-500 transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-brand-500 transition"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top">
-        <div class="container">
-            <a href="index.html" class="navbar-brand d-flex align-items-center">
-                <div class="bg-primary rounded p-2 me-2">
-                    <i class="fas fa-truck text-white"></i>
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="bg-brand-500 text-white p-2 rounded-lg group-hover:bg-brand-600 transition">
+                    <i class="fas fa-truck-fast text-xl"></i>
                 </div>
-                <h1 class="m-0 text-primary fw-bold">Keron<span class="text-secondary">Motors</span></h1>
+                <div>
+                    <h1 class="text-2xl font-bold text-brand-900 leading-none">Keron<span class="text-brand-500">Motors</span></h1>
+                    <span class="text-xs text-slate-500 font-medium tracking-wide">UGANDA'S TRUSTED PARTNER</span>
+                </div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="text-brand-900 font-semibold hover:text-brand-500 transition">Home</a>
+                <a href="about.html" class="text-slate-600 font-medium hover:text-brand-500 transition">About Us</a>
+                <a href="vehicles.html" class="text-slate-600 font-medium hover:text-brand-500 transition">Our Tuk Tuks</a>
+                <a href="service.html" class="text-slate-600 font-medium hover:text-brand-500 transition">Services</a>
+                <a href="contact.html" class="text-slate-600 font-medium hover:text-brand-500 transition">Contact</a>
+            </div>
+
+            <div class="hidden lg:block">
+                <a href="contact.html" class="bg-brand-900 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-brand-500 transition duration-300 shadow-lg shadow-brand-900/20 flex items-center gap-2">
+                    Get a Quote <i class="fas fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-brand-900 text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="service.html" class="dropdown-item">Our Services</a>
-                            <!-- <a href="team.html" class="dropdown-item">Vehicles</a> -->
-                        </div>
-                    </div>
-                    <a href="vehicles.html" class="nav-item nav-link">Our Tuk Tuks</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                </div>
-                <a href="contact.html" class="btn btn-primary py-2 px-4 ms-3">Get A Quote<i class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="index.html" class="text-brand-900 font-semibold py-2 border-b border-slate-100">Home</a>
+                <a href="about.html" class="text-slate-600 font-medium py-2 border-b border-slate-100">About Us</a>
+                <a href="vehicles.html" class="text-slate-600 font-medium py-2 border-b border-slate-100">Our Tuk Tuks</a>
+                <a href="service.html" class="text-slate-600 font-medium py-2 border-b border-slate-100">Services</a>
+                <a href="contact.html" class="text-slate-600 font-medium py-2">Contact</a>
+                <a href="contact.html" class="bg-brand-500 text-white text-center py-3 rounded-lg font-semibold mt-2">Get a Quote</a>
             </div>
         </div>
     </nav>
 
-    <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="img/tuk.jpg" alt="High Quality Cargo Tuk Tuk">
-                    <div class="carousel-caption d-flex align-items-center">
-                        <div class="container">
-                            <div class="row align-items-center justify-content-center justify-content-lg-start">
-                                <div class="col-10 col-lg-7 text-center text-lg-start">
-                                    <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Move your goods efficiently //</h6>
-                                    <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">Premium Cargo Tuk Tuks</h1>
-                                    <p class="text-white mb-4 animated slideInDown">Reliable transportation solutions for your business needs in Uganda</p>
-                                    <a href="contact.html" class="btn btn-primary py-3 px-5 animated slideInDown">Contact Us<i class="fas fa-arrow-right ms-2"></i></a>
-                                </div>
-                                <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
-                                    <img class="img-fluid" src="img/3.jpg" alt="Tuk Tuk Illustration">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="img/4.jpg" alt="Quality Tuk Tuk Services">
-                    <div class="carousel-caption d-flex align-items-center">
-                        <div class="container">
-                            <div class="row align-items-center justify-content-center justify-content-lg-start">
-                                <div class="col-10 col-lg-7 text-center text-lg-start">
-                                    <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Expert maintenance //</h6>
-                                    <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">Professional Servicing</h1>
-                                    <p class="text-white mb-4 animated slideInDown">Keep your Tuk Tuk running perfectly with our expert team</p>
-                                    <a href="contact.html" class="btn btn-primary py-3 px-5 animated slideInDown">Book Service<i class="fas fa-arrow-right ms-2"></i></a>
-                                </div>
-                                <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
-                                    <img class="img-fluid" src="img/1000266359.jpg" alt="Service Illustration">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                    <img class="w-100" src="img/8.jpg" alt="Quality Tuk Tuk Services">
-                    <div class="carousel-caption d-flex align-items-center">
-                        <div class="container">
-                            <div class="row align-items-center justify-content-center justify-content-lg-start">
-                                <div class="col-10 col-lg-7 text-center text-lg-start">
-                                    <h6 class="text-white text-uppercase mb-3 animated slideInDown">//Harvest Season //</h6>
-                                    <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">Ride with Kevla</h1>
-                                    <p class="text-white mb-4 animated slideInDown">Time to go Electric! while enjoying the same performance</p>
-                                    <a href="contact.html" class="btn btn-primary py-3 px-5 animated slideInDown">Book Service<i class="fas fa-arrow-right ms-2"></i></a>
-                                </div>
-                                <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
-                                    <img class="img-fluid" src="img/1000266359.jpg" alt="Service Illustration">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+    <!-- Hero Section -->
+    <header class="relative bg-brand-900 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="img/tuk.jpg" alt="Cargo Tuk Tuk in Uganda" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-900 via-brand-900/80 to-transparent"></div>
         </div>
-    </div>
 
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex bg-light p-4 rounded h-100">
-                        <div class="flex-shrink-0">
-                            <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                                <i class="fa fa-certificate text-white fs-4"></i>
-                            </div>
-                        </div>
-                        <div class="ms-4">
-                            <h5 class="mb-3">Reliable Tuk Tuk Sales</h5>
-                            <p>Discover our wide selection of durable and efficient cargo Tuk Tuks, perfect for your business needs in Uganda.</p>
-                            <a class="text-primary fw-bold" href="team.html">View Our Models <i class="fas fa-arrow-right ms-1"></i></a>
-                        </div>
-                    </div>
+        <div class="container mx-auto px-4 py-24 lg:py-32 relative z-10">
+            <div class="max-w-2xl fade-up">
+                <div class="inline-flex items-center gap-2 bg-brand-500/20 border border-brand-500/30 text-brand-100 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+                    <span class="w-2 h-2 bg-brand-500 rounded-full animate-pulse"></span>
+                    Reliable Transport Solutions in Uganda
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="d-flex bg-white p-4 rounded h-100 shadow-sm">
-                        <div class="flex-shrink-0">
-                            <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                                <i class="fa fa-wrench text-white fs-4"></i>
-                            </div>
-                        </div>
-                        <div class="ms-4">
-                            <h5 class="mb-3">Expert Servicing & Spares</h5>
-                            <p>Keep your Tuk Tuk in top condition with our skilled technicians and readily available genuine spare parts.</p>
-                            <a class="text-primary fw-bold" href="contact.html">Book Service <i class="fas fa-arrow-right ms-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="d-flex bg-light p-4 rounded h-100">
-                        <div class="flex-shrink-0">
-                            <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                                <i class="fa fa-map-marker-alt text-white fs-4"></i>
-                            </div>
-                        </div>
-                        <div class="ms-4">
-                            <h5 class="mb-3">Multiple Locations</h5>
-                            <p>Conveniently serving businesses across Uganda from our branches in Jinja, Masaka, and Mbarara.</p>
-                            <a class="text-primary fw-bold" href="#branches">Find Our Locations <i class="fas fa-arrow-right ms-1"></i></a>
-                        </div>
-                    </div>
+                <h1 class="text-4xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                    Move Your Goods <br>
+                    <span class="text-brand-500">Efficiently & Reliably</span>
+                </h1>
+                <p class="text-lg text-slate-300 mb-8 leading-relaxed max-w-lg">
+                    Premium cargo Tuk Tuks, expert servicing, and genuine spare parts. Keeping your business moving across Jinja, Masaka, Mbarara, and beyond since 2010.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="vehicles.html" class="bg-brand-500 text-white px-8 py-4 rounded-lg font-bold text-center hover:bg-brand-600 transition duration-300 shadow-lg shadow-brand-500/30 flex items-center justify-center gap-2">
+                        View Our Models <i class="fas fa-truck"></i>
+                    </a>
+                    <a href="contact.html" class="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-lg font-bold text-center hover:bg-white/20 transition duration-300 flex items-center justify-center gap-2">
+                        Book a Service <i class="fas fa-wrench"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
+        
+        <!-- Decorative bottom wave -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="w-full h-auto fill-slate-50">
+                <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+            </svg>
+        </div>
+    </header>
 
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 pt-4" style="min-height: 400px;">
-                    <div class="position-relative h-100 wow fadeIn" data-wow-delay="0.1s">
-                        <img class="position-absolute img-fluid w-100 h-100 rounded" src="img/about.jpg" style="object-fit: cover;" alt="About Keron Motors">
-                        <div class="position-absolute top-0 end-0 mt-n4 me-n4 py-4 px-5 bg-primary bg-opacity-90 rounded" style="">
-                            <h1 class="display-4 text-white mb-0">Since 2010</h1>
-                            <h4 class="text-white">Trusted Service</h4>
-                        </div>
-                    </div>
+    <!-- Stats Section -->
+    <section class="py-12 bg-slate-50 -mt-2 relative z-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 bg-white rounded-2xl shadow-xl shadow-slate-200/50 p-8 border border-slate-100">
+                <div class="text-center fade-up">
+                    <div class="text-brand-500 text-3xl mb-2"><i class="fas fa-award"></i></div>
+                    <h3 class="text-3xl font-bold text-brand-900">15+</h3>
+                    <p class="text-slate-500 text-sm font-medium">Years in Business</p>
                 </div>
-                <div class="col-lg-6">
-                    <h6 class="text-primary text-uppercase">// About Us //</h6>
-                    <h1 class="mb-4"><span class="text-primary">Keron Motors</span>: Your Trusted Partner for Tuk Tuk Cargo Tricycles</h1>
-                    <p class="mb-4">Keron Motors has been at the forefront of providing reliable and efficient Tuk Tuk cargo tricycles across Jinja, Masaka, Mbarara, and beyond since 2010. We understand the vital role these vehicles play in local commerce and are committed to offering top-quality sales, servicing, and spare parts to keep your business moving.</p>
-                    <div class="row g-4 mb-3 pb-3">
-                        <div class="col-12 wow fadeIn" data-wow-delay="0.1s">
-                            <div class="d-flex">
-                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
-                                    <span class="fw-bold">01</span>
-                                </div>
-                                <div>
-                                    <h6 class="mb-1">High-Quality Tuk Tuks</h6>
-                                    <span class="text-muted">Offering robust and efficient cargo tricycles designed for Ugandan terrain and business demands.</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
-                            <div class="d-flex">
-                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
-                                    <span class="fw-bold">02</span>
-                                </div>
-                                <div>
-                                    <h6 class="mb-1">Expert Servicing & Support</h6>
-                                    <span class="text-muted">Our dedicated team of technicians ensures your Tuk Tuk receives the best care and maintenance.</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
-                            <div class="d-flex">
-                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
-                                    <span class="fw-bold">03</span>
-                                </div>
-                                <div>
-                                    <h6 class="mb-1">Genuine Spare Parts Availability</h6>
-                                    <span class="text-muted">We stock a comprehensive range of authentic spare parts for lasting performance and reliability.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="btn btn-primary py-3 px-5">Learn More<i class="fas fa-arrow-right ms-2"></i></a>
+                <div class="text-center fade-up" style="transition-delay: 100ms;">
+                    <div class="text-brand-500 text-3xl mb-2"><i class="fas fa-motorcycle"></i></div>
+                    <h3 class="text-3xl font-bold text-brand-900">5,000+</h3>
+                    <p class="text-slate-500 text-sm font-medium">Tuk Tuks Sold</p>
+                </div>
+                <div class="text-center fade-up" style="transition-delay: 200ms;">
+                    <div class="text-brand-500 text-3xl mb-2"><i class="fas fa-handshake"></i></div>
+                    <h3 class="text-3xl font-bold text-brand-900">1,000+</h3>
+                    <p class="text-slate-500 text-sm font-medium">Happy Clients</p>
+                </div>
+                <div class="text-center fade-up" style="transition-delay: 300ms;">
+                    <div class="text-brand-500 text-3xl mb-2"><i class="fas fa-wrench"></i></div>
+                    <h3 class="text-3xl font-bold text-brand-900">7,800+</h3>
+                    <p class="text-slate-500 text-sm font-medium">Services Completed</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="container-fluid fact bg-primary my-5 py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
-                    <i class="fa fa-award fa-3x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up">15</h2>
-                    <p class="text-white mb-0">Years in Business</p>
+    <!-- Services Section -->
+    <section class="py-20 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
+                <span class="text-brand-500 font-bold tracking-wider uppercase text-sm">What We Do</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-brand-900 mt-2 mb-4">Keeping Your Tuk Tuk Running Strong</h2>
+                <p class="text-slate-600">Comprehensive solutions tailored for the Ugandan terrain and your business demands.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 fade-up">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center text-brand-500 text-2xl mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-900 mb-3">Reliable Tuk Tuk Sales</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Discover our wide selection of durable and efficient cargo Tuk Tuks, including the trusted Jinboss models, perfect for your business.</p>
+                    <a href="vehicles.html" class="text-brand-500 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+                        View Models <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
                 </div>
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
-                    <i class="fa fa-motorcycle fa-3x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up">5000</h2>
-                    <p class="text-white mb-0">Tuk Tuks Sold</p>
+
+                <!-- Service 2 -->
+                <div class="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 fade-up" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center text-brand-500 text-2xl mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-900 mb-3">Expert Servicing & Spares</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Keep your Tuk Tuk in top condition with our skilled technicians and readily available genuine spare parts for lasting performance.</p>
+                    <a href="contact.html" class="text-brand-500 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Book Service <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
                 </div>
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <i class="fa fa-handshake fa-3x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up">1000</h2>
-                    <p class="text-white mb-0">Happy Clients</p>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
-                    <i class="fa fa-wrench fa-3x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up">7800</h2>
-                    <p class="text-white mb-0">Services Completed</p>
+
+                <!-- Service 3 -->
+                <div class="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 fade-up" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center text-brand-500 text-2xl mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-truck-pickup"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-900 mb-3">Cargo Bed Fabrication</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Custom cargo bed design, welding, and structural repairs. We build strong, durable, and reliable cargo solutions tailored to your needs.</p>
+                    <a href="service.html" class="text-brand-500 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Learn More <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <div class="lg:w-1/2 relative fade-up">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="img/about.jpg" alt="Keron Motors Workshop" class="w-full h-auto object-cover img-zoom">
+                    </div>
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-brand-500 text-white p-6 rounded-2xl shadow-xl hidden md:block">
+                        <p class="text-4xl font-bold">Since</p>
+                        <p class="text-2xl font-semibold">2010</p>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 fade-up">
+                    <span class="text-brand-500 font-bold tracking-wider uppercase text-sm">About Keron Motors</span>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-brand-900 mt-2 mb-6">Your Trusted Partner for Cargo Tricycles in Uganda</h2>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Keron Motors has been at the forefront of providing reliable and efficient Tuk Tuk cargo tricycles across Jinja, Masaka, Mbarara, and Kampala. We understand the vital role these vehicles play in local commerce and are committed to offering top-quality sales, servicing, and spare parts.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-900">High-Quality Tuk Tuks</h4>
+                                <p class="text-slate-600 text-sm">Robust and efficient cargo tricycles designed for Ugandan terrain.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-900">Expert Servicing & Support</h4>
+                                <p class="text-slate-600 text-sm">Dedicated technicians ensuring your vehicle receives the best care.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-900">Genuine Spare Parts</h4>
+                                <p class="text-slate-600 text-sm">Comprehensive range of authentic parts for lasting reliability.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="inline-flex items-center gap-2 bg-brand-900 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-brand-600 transition duration-300">
+                        Learn More About Us <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Branches Section -->
-    <div id="branches" class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-primary text-uppercase">// Our Branches //</h6>
-                <h1 class="mb-5">Visit Our Locations Across Uganda</h1>
+    <section class="py-20 bg-slate-50" id="branches">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
+                <span class="text-brand-500 font-bold tracking-wider uppercase text-sm">Our Locations</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-brand-900 mt-2 mb-4">Visit Our Branches Across Uganda</h2>
+                <p class="text-slate-600">Conveniently located to serve you better, wherever your business operates.</p>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="branch-item bg-light p-4 rounded h-100">
-                        <div class="text-center">
-                            <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
-                                <i class="fa fa-map-marker-alt text-white fa-2x"></i>
-                            </div>
-                            <h4 class="mb-3">Jinja Branch</h4>
-                            <h5 class="text-primary mb-3">Your Trusted Jinboss Dealer</h5>
-                            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Mbiko, Njeru</p>
-                            <p class="mb-2"><i class="fa fa-phone-alt text-primary me-2"></i>0706 507280</p>
-                            <p class="mb-2"><i class="fa fa-envelope text-primary me-2"></i>info@keronmotors.com</p>
-                            <p class="mb-0"><i class="far fa-clock text-primary me-2"></i>Mon-Fri: 8AM-5PM, Sat: 9AM-1PM</p>
-                            <div class="mt-3">
-                                <span class="badge bg-primary me-1">Tricycles</span>
-                                <span class="badge bg-primary me-1">Spare Parts</span>
-                                <span class="badge bg-primary">Service</span>
-                            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Jinja -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg transition fade-up">
+                    <div class="w-16 h-16 bg-brand-900 text-white rounded-full flex items-center justify-center text-2xl mb-6 mx-auto">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-900 text-center mb-2">Jinja Branch</h3>
+                    <p class="text-brand-500 text-center font-semibold text-sm mb-6">Your Trusted Jinboss Dealer</p>
+                    <div class="space-y-3 text-slate-600 text-sm">
+                        <p class="flex items-start gap-3"><i class="fas fa-map-pin text-brand-500 mt-1"></i> Mbiko, Njeru</p>
+                        <p class="flex items-center gap-3"><i class="fas fa-phone-alt text-brand-500"></i> 0706 507280</p>
+                        <p class="flex items-center gap-3"><i class="far fa-clock text-brand-500"></i> Mon-Fri: 8AM-5PM, Sat: 9AM-1PM</p>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-2 justify-center">
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">Tricycles</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">Spare Parts</span>
+                    </div>
+                </div>
+
+                <!-- Masaka -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg transition fade-up" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 bg-brand-900 text-white rounded-full flex items-center justify-center text-2xl mb-6 mx-auto">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-900 text-center mb-2">Masaka Branch</h3>
+                    <p class="text-slate-400 text-center font-semibold text-sm mb-6">Serving the Greater Masaka Region</p>
+                    <div class="space-y-3 text-slate-600 text-sm">
+                        <p class="flex items-start gap-3"><i class="fas fa-map-pin text-brand-500 mt-1"></i> Plot 12, Masaka Town Center</p>
+                        <p class="flex items-center gap-3"><i class="fas fa-phone-alt text-brand-500"></i> +256 783 170 177</p>
+                        <p class="flex items-center gap-3"><i class="far fa-clock text-brand-500"></i> Mon-Fri: 8AM-5PM, Sat: 9AM-1PM</p>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-2 justify-center">
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">Tricycles</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">Service</span>
+                    </div>
+                </div>
+
+                <!-- Mbarara -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg transition fade-up" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 bg-brand-900 text-white rounded-full flex items-center justify-center text-2xl mb-6 mx-auto">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-900 text-center mb-2">Mbarara Branch</h3>
+                    <p class="text-slate-400 text-center font-semibold text-sm mb-6">Western Uganda Hub</p>
+                    <div class="space-y-3 text-slate-600 text-sm">
+                        <p class="flex items-start gap-3"><i class="fas fa-map-pin text-brand-500 mt-1"></i> Plot 8, Mbarara Industrial Area</p>
+                        <p class="flex items-center gap-3"><i class="fas fa-phone-alt text-brand-500"></i> +256 703 363 037</p>
+                        <p class="flex items-center gap-3"><i class="far fa-clock text-brand-500"></i> Mon-Fri: 8AM-5PM, Sat: 9AM-1PM</p>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-2 justify-center">
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">Tricycles</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">Fabrication</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
+                <span class="text-brand-500 font-bold tracking-wider uppercase text-sm">Testimonials</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-brand-900 mt-2 mb-4">What Our Clients Say</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-8 rounded-2xl relative fade-up">
+                    <i class="fas fa-quote-left text-4xl text-brand-200 absolute top-6 left-6"></i>
+                    <p class="text-slate-600 relative z-10 mb-6 pt-6 leading-relaxed">"Keron Motors provided me with a fantastic cargo Tuk Tuk. It's been incredibly reliable for my delivery business. Their service team is also top-notch!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-200 rounded-full flex items-center justify-center text-brand-700 font-bold">AM</div>
+                        <div>
+                            <h4 class="font-bold text-brand-900">Ali Mugisha</h4>
+                            <p class="text-sm text-slate-500">Small Business Owner</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="branch-item bg-light p-4 rounded h-100">
-                        <div class="text-center">
-                            <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
-                                <i class="fa fa-map-marker-alt text-white fa-2x"></i>
-                            </div>
-                            <h4 class="mb-3">Masaka Branch</h4>
-                            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Plot 12, Masaka Town Center</p>
-                            <p class="mb-2"><i class="fa fa-phone-alt text-primary me-2"></i>+256 783170177</p>
-                            <p class="mb-2"><i class="fa fa-envelope text-primary me-2"></i>info@keronmotors.com</p>
-                            <p class="mb-0"><i class="far fa-clock text-primary me-2"></i>Mon-Fri: 8AM-5PM, Sat: 9AM-1PM</p>
-                            <div class="mt-3">
-                                <span class="badge bg-primary me-1">Tricycles</span>
-                                <span class="badge bg-primary me-1">Spare Parts</span>
-                                <span class="badge bg-primary">Service</span>
-                            </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl relative fade-up" style="transition-delay: 100ms;">
+                    <i class="fas fa-quote-left text-4xl text-brand-200 absolute top-6 left-6"></i>
+                    <p class="text-slate-600 relative z-10 mb-6 pt-6 leading-relaxed">"I rely on my Tuk Tuk every day to transport goods to the market. Keron Motors' maintenance keeps it running perfectly. Genuine spare parts are a huge relief."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-200 rounded-full flex items-center justify-center text-brand-700 font-bold">NG</div>
+                        <div>
+                            <h4 class="font-bold text-brand-900">Nakato Grace</h4>
+                            <p class="text-sm text-slate-500">Market Vendor</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="branch-item bg-light p-4 rounded h-100">
-                        <div class="text-center">
-                            <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
-                                <i class="fa fa-map-marker-alt text-white fa-2x"></i>
-                            </div>
-                            <h4 class="mb-3">Mbarara Branch</h4>
-                            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Plot 8, Mbarara Industrial Area</p>
-                            <p class="mb-2"><i class="fa fa-phone-alt text-primary me-2"></i>+256 703363037</p>
-                            <p class="mb-2"><i class="fa fa-envelope text-primary me-2"></i>info@keronmotors.com</p>
-                            <p class="mb-0"><i class="far fa-clock text-primary me-2"></i>Mon-Fri: 8AM-5PM, Sat: 9AM-1PM</p>
-                            <div class="mt-3">
-                                <span class="badge bg-primary me-1">Tricycles</span>
-                                <span class="badge bg-primary me-1">Spare Parts</span>
-                                <span class="badge bg-primary">Service</span>
-                            </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl relative fade-up" style="transition-delay: 200ms;">
+                    <i class="fas fa-quote-left text-4xl text-brand-200 absolute top-6 left-6"></i>
+                    <p class="text-slate-600 relative z-10 mb-6 pt-6 leading-relaxed">"The cargo capacity of the Tuk Tuk from Keron Motors has transformed how I transport my produce. It's affordable to run and easy to maintain."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-200 rounded-full flex items-center justify-center text-brand-700 font-bold">AF</div>
+                        <div>
+                            <h4 class="font-bold text-brand-900">Atukunda Fiona</h4>
+                            <p class="text-sm text-slate-500">Farmer & Distributor</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="container-xxl service py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-primary text-uppercase">// Our Services //</h6>
-                <h1 class="mb-5">Keeping Your Tuk Tuk Running Strong</h1>
-            </div>
-            <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="col-lg-4">
-                    <div class="nav w-100 nav-pills me-4">
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 active" data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
-                            <i class="fa fa-wrench fa-2x me-3"></i>
-                            <h4 class="m-0">General Maintenance</h4>
-                        </button>
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-2" type="button">
-                            <i class="fa fa-cogs fa-2x me-3"></i>
-                            <h4 class="m-0">Engine & Gearbox Repair</h4>
-                        </button>
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-3" type="button">
-                            <i class="fa fa-truck-pickup fa-2x me-3"></i>
-                            <h4 class="m-0">Cargo Bed Fabrication</h4>
-                        </button>
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-0" data-bs-toggle="pill" data-bs-target="#tab-pane-4" type="button">
-                            <i class="fa fa-tools fa-2x me-3"></i>
-                            <h4 class="m-0">Customization</h4>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="tab-content w-100">
-                        <div class="tab-pane fade show active" id="tab-pane-1">
-                            <div class="row g-4">
-                                <div class="col-md-6" style="min-height: 350px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100 rounded" src="img/service.jpg" style="object-fit: cover;" alt="Tuk Tuk General Maintenance">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="mb-3">Reliable Maintenance for Your Tuk Tuk</h3>
-                                    <p class="mb-4">At Keron Motors, we offer comprehensive general maintenance to ensure your cargo Tuk Tuk is always in top condition. From routine checks to preventative care, our experienced technicians keep your vehicle running smoothly and efficiently.</p>
-                                    <p><i class="fa fa-check text-success me-2"></i>Thorough Inspections</p>
-                                    <p><i class="fa fa-check text-success me-2"></i>Fluid Checks & Replacements</p>
-                                    <p><i class="fa fa-check text-success me-2"></i>Brake & Suspension Servicing</p>
-                                    <a href="contact.html" class="btn btn-primary py-3 px-5 mt-3">Schedule Service<i class="fas fa-arrow-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab-pane-2">
-                            <div class="row g-4">
-                                <div class="col-md-6" style="min-height: 350px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100 rounded" src="img/tuk-tuk-engine-repair.jpg" style="object-fit: cover;" alt="Tuk Tuk Engine Repair">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="mb-3">Expert Engine & Gearbox Solutions</h3>
-                                    <p class="mb-4">Our specialists are adept at diagnosing and repairing all issues related to Tuk Tuk engines and gearboxes. We use genuine parts and advanced techniques to restore your vehicle's performance.</p>
-                                    <p><i class="fa fa-check text-success me-2"></i>Engine Diagnostics & Overhaul</p>
-                                    <p><i class="fa fa-check text-success me-2"></i>Gearbox Repair & Replacement</p>
-                                    <p><i class="fa fa-check text-success me-2"></i>Fuel System Servicing</p>
-                                    <a href="contact.html" class="btn btn-primary py-3 px-5 mt-3">Get a Quote<i class="fas fa-arrow-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab-pane-3">
-                            <div class="row g-4">
-                                <div class="col-md-6" style="min-height: 350px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100 rounded" src="img/tuk-tuk-cargo-bed.jpg" style="object-fit: cover;" alt="Tuk Tuk Cargo Bed Fabrication">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="mb-3">Durable Cargo Bed Fabrication</h3>
-                                    <p class="mb-4">Whether you need a new cargo bed built to your specifications or require repairs to an existing one, Keron Motors has you covered. We ensure strong, durable, and reliable cargo solutions.</p>
-                                    <p><i class="fa fa-check text-success me-2"></i>Custom Cargo Bed Design</p>
-                                    <p><i class="fa fa-check text-success me-2"></i>Welding & Structural Repairs</p>
-                                    <p><i class="fa fa-check text-success me-2"></i>Rust Treatment & Painting</p>
-                                    <a href="contact.html" class="btn btn-primary py-3 px-5 mt-3">Learn More<i class="fas fa-arrow-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab-pane-4">
-                            <div class="row g-4">
-                                <div class="col-md-6" style="min-height: 350px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100 rounded" src="img/tuk-tuk-customization.jpg" style="object-fit: cover;" alt="Tuk Tuk Customization">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="mb-3">Personalize Your Tuk Tuk</h3>
-                                    <p class="mb-4">From additional storage solutions to safety enhancements and aesthetic upgrades, we offer a range of customization options and accessories to make your Tuk Tuk cargo tricycle truly your own.</p>
-                                    <p><i class="fa fa-check text-success me-2"></i>Safety Enhancements</p>
-                                    <p><i class="fa fa-check text-success me-2"></i>Comfort Upgrades</p>
-                                    <p><i class="fa fa-check text-success me-2"></i>Branding & Graphics</p>
-                                    <a href="contact.html" class="btn btn-primary py-3 px-5 mt-3">Explore Options<i class="fas fa-arrow-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- CTA / Booking Section -->
+    <section class="py-20 bg-brand-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <img src="img/tuk.jpg" alt="Background" class="w-full h-full object-cover">
         </div>
-    </div>
-
-    <div class="container-fluid bg-secondary booking my-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="row gx-5">
-                <div class="col-lg-6 py-5">
-                    <div class="py-5">
-                        <h1 class="text-white mb-4">Reliable Tuk Tuk Sales and Expert Servicing Across Uganda</h1>
-                        <p class="text-white mb-0">Keron Motors is your trusted partner for all your Tuk Tuk cargo tricycle needs in Jinja, Masaka, Mbarara, and beyond. We offer a wide range of durable and efficient Tuk Tuks for sale, alongside professional and reliable maintenance services.</p>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2 text-white fade-up">
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-6">Ready to Upgrade Your Fleet or Service Your Tuk Tuk?</h2>
+                    <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                        Whether you need a new cargo tricycle, routine maintenance, or custom fabrication, our expert team is ready to assist you. Get a quick quote or book a service today.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="tel:+256783170177" class="bg-brand-500 text-white px-8 py-4 rounded-lg font-bold text-center hover:bg-brand-600 transition duration-300 flex items-center justify-center gap-2">
+                            <i class="fas fa-phone-alt"></i> Call Us Now
+                        </a>
+                        <a href="contact.html" class="bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-center hover:bg-slate-100 transition duration-300 flex items-center justify-center gap-2">
+                            Send a Message <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="bg-primary h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s">
-                        <h1 class="text-white mb-4">Book Your Tuk Tuk Service</h1>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <select class="form-select border-0" style="height: 55px;">
-                                        <option selected>Select Service Type</option>
-                                        <option value="1">General Maintenance</option>
-                                        <option value="2">Engine & Gearbox Repair</option>
-                                        <option value="3">Cargo Bed Fabrication</option>
-                                        <option value="4">Customization</option>
-                                        <option value="5">Other Repair</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text" class="form-control border-0 datetimepicker-input" placeholder="Preferred Date" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control border-0" placeholder="Describe Your Needs (e.g., Tuk Tuk model, specific issue)" rows="3"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-secondary w-100 py-3" type="submit">Submit Request</button>
-                                </div>
+
+                <div class="lg:w-1/2 w-full fade-up">
+                    <div class="bg-white rounded-2xl p-8 shadow-2xl">
+                        <h3 class="text-2xl font-bold text-brand-900 mb-6">Book a Service / Get a Quote</h3>
+                        <form class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition">
+                                <input type="tel" placeholder="Phone Number" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition">
                             </div>
+                            <select class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition text-slate-600">
+                                <option value="" disabled selected>Select Service Type</option>
+                                <option value="sales">New Tuk Tuk Purchase</option>
+                                <option value="maintenance">General Maintenance</option>
+                                <option value="engine">Engine & Gearbox Repair</option>
+                                <option value="fabrication">Cargo Bed Fabrication</option>
+                                <option value="parts">Spare Parts Inquiry</option>
+                            </select>
+                            <textarea placeholder="Describe your needs (e.g., Tuk Tuk model, specific issue)" rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition resize-none"></textarea>
+                            <button type="submit" class="w-full bg-brand-900 text-white font-bold py-4 rounded-lg hover:bg-brand-600 transition duration-300">
+                                Submit Request
+                            </button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="text-center">
-                <h6 class="text-primary text-uppercase">// Testimonials //</h6>
-                <h1 class="mb-5">What Our Clients Say About Us!</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel position-relative">
-                <div class="testimonial-item text-center">
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="img/client-ali-mugisha.jpg" style="width: 80px; height: 80px;" alt="Client Ali Mugisha">
-                    <h5 class="mb-0">Ali Mugisha</h5>
-                    <p class="text-muted">Small Business Owner</p>
-                    <div class="testimonial-text bg-light text-center p-4 rounded">
-                        <p class="mb-0">"Keron Motors provided me with a fantastic cargo Tuk Tuk. It's been incredibly reliable for my delivery business. Their service team is also top-notch, always ready to help!"</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="img/client-nakato-grace.jpg" style="width: 80px; height: 80px;" alt="Client Nakato Grace">
-                    <h5 class="mb-0">Nakato Grace</h5>
-                    <p class="text-muted">Market Vendor</p>
-                    <div class="testimonial-text bg-light text-center p-4 rounded">
-                        <p class="mb-0">"I rely on my Tuk Tuk every day to transport goods to the market. Keron Motors' maintenance keeps it running perfectly. Their genuine spare parts are a huge relief."</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="img/client-mugerwa-isaac.jpg" style="width: 80px; height: 80px;" alt="Client Mugerwa Isaac">
-                    <h5 class="mb-0">Mugerwa Isaac</h5>
-                    <p class="text-muted">Logistics Coordinator</p>
-                    <div class="testimonial-text bg-light text-center p-4 rounded">
-                        <p class="mb-0">"We purchased several Tuk Tuks from Keron Motors for our fleet. The quality and durability are impressive, and their customer service made the entire process seamless."</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="img/client-atukunda-fiona.jpg" style="width: 80px; height: 80px;" alt="Client Atukunda Fiona">
-                    <h5 class="mb-0">Atukunda Fiona</h5>
-                    <p class="text-muted">Farmer & Distributor</p>
-                    <div class="testimonial-text bg-light text-center p-4 rounded">
-                        <p class="mb-0">"The cargo capacity of the Tuk Tuk from Keron Motors has transformed how I transport my produce. It's affordable to run and easy to maintain thanks to their support."</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Our Branches</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jinja | Masaka | Mbarara</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+256 783 170 177</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@keronmotors.ug</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social me-2" href="https://twitter.com/KeronMotorsUG" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social me-2" href="https://facebook.com/KeronMotorsUG" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social me-2" href="https://youtube.com/KeronMotorsUG" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://linkedin.com/company/keron-motors" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Opening Hours</h4>
-                    <h6 class="text-light">Monday - Friday:</h6>
-                    <p class="mb-4">8:00 AM - 5:00 PM</p>
-                    <h6 class="text-light">Saturday:</h6>
-                    <p class="mb-4">9:00 AM - 1:00 PM</p>
-                    <h6 class="text-light">Sunday:</h6>
-                    <p class="mb-0">Closed</p>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Our Services</h4>
-                    <a class="btn btn-link text-light d-block mb-2" href="service.html#tab-pane-1">General Maintenance</a>
-                    <a class="btn btn-link text-light d-block mb-2" href="service.html#tab-pane-2">Engine & Gearbox Repair</a>
-                    <a class="btn btn-link text-light d-block mb-2" href="service.html#tab-pane-3">Cargo Bed Fabrication</a>
-                    <a class="btn btn-link text-light d-block mb-2" href="service.html#tab-pane-4">Customization</a>
-                    <a class="btn btn-link text-light d-block mb-2" href="products.html">Tuk Tuk Sales</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Newsletter</h4>
-                    <p class="mb-3">Stay updated with the latest news, offers, and Tuk Tuk tips from Keron Motors!</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="text-white text-decoration-none" href="#">Keron Motors</a>, All Rights Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <div class="footer-menu">
-                            <a class="text-white text-decoration-none me-3" href="index.html">Home</a>
-                            <a class="text-white text-decoration-none me-3" href="#">Privacy</a>
-                            <a class="text-white text-decoration-none me-3" href="contact.html">Help</a>
-                            <a class="text-white text-decoration-none" href="about.html">FAQs</a>
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="bg-brand-500 text-white p-1.5 rounded-md">
+                            <i class="fas fa-truck-fast text-lg"></i>
                         </div>
+                        <h2 class="text-2xl font-bold text-white">Keron<span class="text-brand-500">Motors</span></h2>
                     </div>
+                    <p class="text-sm leading-relaxed mb-6">
+                        Your trusted partner for reliable cargo Tuk Tuks, expert servicing, and genuine spare parts across Uganda since 2010.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-500 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-500 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-500 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-brand-500 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-brand-500 transition">About Us</a></li>
+                        <li><a href="vehicles.html" class="hover:text-brand-500 transition">Our Tuk Tuks</a></li>
+                        <li><a href="service.html" class="hover:text-brand-500 transition">Services</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-500 transition">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Our Services</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="service.html" class="hover:text-brand-500 transition">General Maintenance</a></li>
+                        <li><a href="service.html" class="hover:text-brand-500 transition">Engine & Gearbox Repair</a></li>
+                        <li><a href="service.html" class="hover:text-brand-500 transition">Cargo Bed Fabrication</a></li>
+                        <li><a href="service.html" class="hover:text-brand-500 transition">Customization</a></li>
+                        <li><a href="vehicles.html" class="hover:text-brand-500 transition">Tuk Tuk Sales</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Contact Info</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-brand-500 mt-1"></i>
+                            <span>Jinja | Masaka | Mbarara | Kampala, Uganda</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone-alt text-brand-500"></i>
+                            <a href="tel:+256783170177" class="hover:text-white transition">+256 783 170 177</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-brand-500"></i>
+                            <a href="mailto:info@keronmotors.ug" class="hover:text-white transition">info@keronmotors.ug</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+                <p>&copy; 2024 Keron Motors. All Rights Reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
 
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- Back to Top -->
+    <a href="#" id="backToTop" class="fixed bottom-8 right-8 bg-brand-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-brand-600 z-40">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/wa-branches.js"></script>
-    <!-- delightchat widget (kept so clicking widget opens branch modal) -->
+    <!-- WhatsApp Widget (Preserved as requested) -->
     <script async src="https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js"></script>
     <script>
         var wa_btnSetting = {"btnColor":"#16BE45","ctaText":"WhatsApp Us","cornerRadius":40,"marginBottom":20,"marginLeft":20,"marginRight":20,"btnPosition":"right","whatsAppNumber":"256783170177","welcomeMessage":"Talk to us","zIndex":999999,"btnColorScheme":"light"};
@@ -626,40 +556,57 @@
             if (typeof _waEmbed === 'function') _waEmbed(wa_btnSetting);
         };
     </script>
-    <!-- Spinner Handler Script -->
-    <script>
-    window.addEventListener('load', function() {
-        const spinner = document.getElementById('spinner');
-        if (spinner) spinner.classList.remove('show');
-    });
-    </script>
-    <script>
-        (function(){
-            const nav = document.querySelector('.navbar');
-            const back = document.querySelector('.back-to-top');
 
-            function onScroll() {
-                if (window.scrollY > 60) {
-                    nav && nav.classList.add('scrolled');
-                    back && back.classList.add('show');
-                } else {
-                    nav && nav.classList.remove('scrolled');
-                    back && back.classList.remove('show');
+    <!-- Custom Scripts (No Loaders!) -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll Animations (Intersection Observer - Modern & Performant)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Only animate once
                 }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Back to Top Button & Navbar Scroll Effect
+        const backToTopBtn = document.getElementById('backToTop');
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+                navbar.classList.add('shadow-md');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+                navbar.classList.remove('shadow-md');
             }
+        });
 
-            window.addEventListener('scroll', onScroll, { passive: true });
-
-            if (back) {
-                back.addEventListener('click', function(e){
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
-
-            // initialize state
-            onScroll();
-        })();
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
 </body>
 </html>
